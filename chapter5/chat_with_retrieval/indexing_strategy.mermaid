@@ -1,0 +1,28 @@
+graph TD
+    A[Start: Choose Indexing Strategy] --> B{Dimensions < 100?}
+    B -->|Yes| C[Tree-based Index<br>KD-tree/Ball-tree]
+    B -->|No| D{Memory Constrained?}
+    
+    D -->|Yes| E{High Update<br>Frequency?}
+    D -->|No| F{Accuracy > 99%<br>Required?}
+    
+    E -->|Yes| G[LSH<br>Fast updates, moderate accuracy]
+    E -->|No| H[IVF + Product Quantization<br>Memory efficient]
+    
+    F -->|Yes| I[Brute Force<br>with GPU acceleration]
+    F -->|No| J[HNSW<br>Best general-purpose choice]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#bbf,stroke:#333,stroke-width:2px
+    
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
+    style H fill:#bfb,stroke:#333,stroke-width:2px
+    style I fill:#bfb,stroke:#333,stroke-width:2px
+    style J fill:#bfb,stroke:#333,stroke-width:2px
+
+    classDef decision fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef outcome fill:#bfb,stroke:#333,stroke-width:2px;
