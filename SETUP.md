@@ -95,3 +95,35 @@ def set_environment():
 Obviously, you'd put your API credentials here. Depending on the integration (Openai, Azure, etc) you need to add the corresponding API keys. The OpenAI API keys are the most often used across all the code. 
 
 You can find more details about API credentials and setup in chapter 3 of the book [Generative AI with LangChain](https://www.amazon.com/Generative-AI-LangChain-language-ChatGPT-ebook/dp/B0CBBL55PQ).
+
+
+## gcloud CLI
+For the [Google Vertex models](https://cloud.google.com/vertex-ai) you need to [download and install the Google gcloud CLI](https://cloud.google.com/sdk/docs/install). If you want to do this in Docker, you can adapt your Dockerfile to add this here:
+
+```bash
+# 1. Install basic prerequisites
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      curl \
+      gnupg \
+      apt-transport-https \
+      ca-certificates
+
+# 2. Download & dearmor Google Cloud apt–signing key
+RUN curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+    | gpg --dearmor \
+    > /usr/share/keyrings/cloud.google.gpg
+
+# 3. Add the Cloud SDK repository, referencing the keyring
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] \
+    https://packages.cloud.google.com/apt cloud-sdk main" \
+    > /etc/apt/sources.list.d/google-cloud-sdk.list
+
+# 4. Update apt and install the Cloud SDK
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends google-cloud-cli
+
+# 5. (Optional) Configure gcloud defaults to disable prompts/metrics
+RUN gcloud config set disable_usage_reporting true \
+ && gcloud config set metrics/environment disable_prompts true
+```
