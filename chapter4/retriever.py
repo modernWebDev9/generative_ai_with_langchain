@@ -55,4 +55,4 @@ class DocumentRetriever(BaseRetriever):
         """Sync implementations for retriever."""
         if len(self.documents) == 0:
             return []
-        return VECTOR_STORE.similarity_search(query="", k=self.k)
+        return VECTOR_STORE.similarity_search(query=query, k=self.k)
