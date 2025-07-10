@@ -2,16 +2,16 @@
 
 This directory contains code examples for deploying and monitoring LLM applications in production environments.
 
-| Section | File | Description | Colab | Kaggle | Gradient |
-|---------|------|-------------|-------|--------|----------|
-| Web Service | [main.py](fastapi/main.py) | Implements a production-ready web server with FastAPI that handles both standard HTTP requests and WebSocket connections for streaming LLM responses | x | x | x |
-| Distributed Computing | [build_index.py](ray/build_index.py) | Demonstrates how to build a FAISS vector index from documentation using Ray for distributed processing | x | x | x |
-| API Serving | [serve_index.py](ray/serve_index.py) | Shows how to serve a pre-built FAISS index as an API endpoint using Ray Serve with robust error handling | x | x | x |
-| Observability | [prompt_tracking.py](prompt_tracking.py) | Integrates PromptWatch for monitoring and tracking LLM prompts and responses in production | x | x | x |
-| Chat Interface | [chat.py](chat.py) | Implements a simple chat interface for interacting with LLM models | x | x | x |
-| Vector Stores | [indexing.py](indexing.py) | Demonstrates how to create and manage vector store indexes for retrieval-augmented generation | x | x | x |
-| Search API | [serve_vector_store.py](serve_vector_store.py) | Shows how to serve a vector store as an API for semantic search capabilities | x | x | x |
-| Agent Monitoring | [tracing.py](tracing.py) | Implements tracing and trajectory tracking for LLM agents to monitor execution paths | x | x | x |
+| Section | File | Description | Colab | Kaggle |
+|---------|------|-------------|-------|--------|
+| Web Service | [main.py](fastapi/main.py) | Implements a production-ready web server with FastAPI that handles both standard HTTP requests and WebSocket connections for streaming LLM responses | x | x |
+| Distributed Computing | [build_index.py](ray/build_index.py) | Demonstrates how to build a FAISS vector index from documentation using Ray for distributed processing | x | x |
+| API Serving | [serve_index.py](ray/serve_index.py) | Shows how to serve a pre-built FAISS index as an API endpoint using Ray Serve with robust error handling | x | x |
+| Observability | [prompt_tracking.py](prompt_tracking.py) | Integrates PromptWatch for monitoring and tracking LLM prompts and responses in production | x | x |
+| Chat Interface | [chat.py](chat.py) | Implements a simple chat interface for interacting with LLM models | x | x |
+| Vector Stores | [indexing.py](indexing.py) | Demonstrates how to create and manage vector store indexes for retrieval-augmented generation | x | x |
+| Search API | [serve_vector_store.py](serve_vector_store.py) | Shows how to serve a vector store as an API for semantic search capabilities | x | x |
+| Agent Monitoring | [tracing.py](tracing.py) | Implements tracing and trajectory tracking for LLM agents to monitor execution paths | x | x |
 
 ## Requirements
 
