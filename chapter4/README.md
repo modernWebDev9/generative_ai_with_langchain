@@ -4,12 +4,22 @@ Please make sure you set up your environment with pip, conda, poetry, or docker!
 
 ## Notebooks
 
-| Notebook | Description | Colab | Kaggle | Gradient |
-|----------|-------------|-------|--------|----------|
-| [01_embeddings_and_vectorstores.ipynb](01_embeddings_and_vectorstores.ipynb) | Explores embeddings creation and vector storage fundamentals for RAG systems | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]() | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)]() |
-| [02_document_processing.ipynb](02_document_processing.ipynb) | Demonstrates document loading and chunking strategies for optimal retrieval | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]() | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)]() |
-| [03_retrieval_techniques.ipynb](03_retrieval_techniques.ipynb) | Covers different retrieval methods including vector search, hybrid search, and MMR | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]() | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)]() |
-| [04_advanced_rag_techniques.ipynb](04_advanced_rag_techniques.ipynb) | Advanced techniques like query transformation, contextual compression, and self-consistency checking | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]() | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)]() | [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)]() |
+| Notebook | Description | Colab | Kaggle |
+|----------|-------------|-------|--------|
+| [01_embeddings_and_vectorstores.ipynb](01_embeddings_and_vectorstores.ipynb) | Explores embeddings creation and vector storage fundamentals for RAG systems | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/01_embeddings_and_vectorstores.ipynb) | [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/new) |
+| [02_document_processing.ipynb](02_document_processing.ipynb) | Demonstrates document loading and chunking strategies for optimal retrieval | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/02_document_processing.ipynb) | [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/new) |
+| [03_retrieval_techniques.ipynb](03_retrieval_techniques.ipynb) | Covers different retrieval methods including vector search, hybrid search, and MMR | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/03_retrieval_techniques.ipynb) | [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/new) |
+| [04_advanced_rag_techniques.ipynb](04_advanced_rag_techniques.ipynb) | Advanced techniques like query transformation, contextual compression, and self-consistency checking | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/04_advanced_rag_techniques.ipynb) | [![Open in Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/new) |
+
+#### 📋 **Kaggle Import Instructions:**
+To import any notebook to Kaggle:
+1. Click the Kaggle badge above
+2. Go to **File** → **Import Notebook** → **GitHub**
+3. Paste the corresponding GitHub URL:
+   - **Embeddings & Vector Stores**: `https://github.com/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/01_embeddings_and_vectorstores.ipynb`
+   - **Document Processing**: `https://github.com/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/02_document_processing.ipynb`
+   - **Retrieval Techniques**: `https://github.com/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/03_retrieval_techniques.ipynb`
+   - **Advanced RAG Techniques**: `https://github.com/benman1/generative_ai_with_langchain/blob/second_edition/chapter4/04_advanced_rag_techniques.ipynb`
 
 ## Streamlit Application
 
