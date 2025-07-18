@@ -78,19 +78,25 @@ def generate(state: State):
 
 
 def double_check(state: State):
-    result = chat_model.invoke(
-        [{
-            "role": "user",
-            "content": (
-                f"Review the following project documentation for compliance with our corporate standards. "
-                f"Return 'ISSUES FOUND' followed by any issues detected or 'NO ISSUES': {state['answer']}"
-            )
-        }]
-    )
-    if "ISSUES FOUND" in result.content:
+    result = chat_model.invoke([{
+        "role": "user",
+        "content": (
+            f"Review the following project documentation for compliance with our corporate standards. "
+            f"Return 'ISSUES FOUND' followed by any issues detected or 'NO ISSUES': {state['answer']}"
+        )
+    }])
+    
+    # Extract actual response (after thinking block)
+    content = result.content
+    if "</think>" in content:
+        actual_response = content.split("</think>", 1)[1].strip()
+    else:
+        actual_response = content.strip()
+    
+    if "ISSUES FOUND" in actual_response:
         print("issues detected")
         return {
-            "issues_report": result.split("ISSUES FOUND", 1)[1].strip(),
+            "issues_report": actual_response.split("ISSUES FOUND", 1)[1].strip(),
             "issues_detected": True
         }
     print("no issues detected")
@@ -105,16 +111,14 @@ def double_check(state: State):
 def doc_finalizer(state: State):
     """Finalize documentation by integrating human feedback."""
     if "issues_detected" in state and state["issues_detected"]:
-        response = chat_model.invoke(
-            messages=[{
-                "role": "user",
-                "content": (
-                    f"Revise the following documentation to address these feedback points: {state['issues_report']}\n"
-                    f"Original Document: {state['answer']}\n"
-                    f"Always return the full revised document, even if no changes are needed."
-                )
-            }]
-        )
+        response = chat_model.invoke([{
+            "role": "user",
+            "content": (
+                f"Revise the following documentation to address these feedback points: {state['issues_report']}\n"
+                f"Original Document: {state['answer']}\n"
+                f"Always return the full revised document, even if no changes are needed."
+            )
+        }])
         return {
             "messages": [AIMessage(response.content)]
         }
