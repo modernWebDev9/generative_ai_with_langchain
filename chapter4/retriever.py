@@ -40,12 +40,19 @@ class DocumentRetriever(BaseRetriever):
     def add_uploaded_docs(self, uploaded_files):
         """Add uploaded documents."""
         docs = []
-        temp_dir = tempfile.TemporaryDirectory()
-        for file in uploaded_files:
-            temp_filepath = os.path.join(temp_dir.name, file.name)
-            with open(temp_filepath, "wb") as f:
-                f.write(file.getvalue())
-                docs.extend(load_document(temp_filepath))
+        with tempfile.TemporaryDirectory() as temp_dir:
+            for file in uploaded_files:
+                temp_filepath = os.path.join(temp_dir, file.name)
+                # Write file content first
+                with open(temp_filepath, "wb") as f:
+                    f.write(file.getvalue())
+                # Load document AFTER file is closed
+                try:
+                    docs.extend(load_document(temp_filepath))
+                except Exception as e:
+                    print(f"Failed to load {file.name}: {e}")
+                    continue
+
         self.documents.extend(docs)
         self.store_documents(docs)
 
