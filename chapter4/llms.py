@@ -9,7 +9,7 @@ from config import set_environment
 set_environment()
 
 chat_model = ChatGroq(
-    model="deepseek-r1-distill-llama-70b",
+    model="llama-3.3-70b-versatile",
     temperature=0,
     max_tokens=None,
     timeout=None,
